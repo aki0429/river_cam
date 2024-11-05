@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xml:lang="ja">
+ <channel rdf:about="https://www.ipa.go.jp/security/alert-rss.rdf">
+     <title>緊急対策情報・注意喚起（重要なセキュリティ情報）RSS</title>
+     <link>https://www.ipa.go.jp/security/index.html</link>
+     <description>緊急対策情報・注意喚起（重要なセキュリティ情報）RSS</description>
+     <dc:language>ja-jp</dc:language>
+     <items>
+         <rdf:Seq>
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/alert20240918.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/1016-jre.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/win10_eos.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/1009-ms.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/alert20240918.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/alert20240911.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0911-ms.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0911-adobereader.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0814-ms.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0814-adobereader.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/alert20240801.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0717-jre.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0710-ms.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/alert_20240705.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/alert20240619.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0612-ms.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0515-adobereader.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0515-ms.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/alert20240415.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/alert_orb.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/alert20240415.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0417-jre.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/alert20240415.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2024/0410-ms.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2023/0313-ms.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2023/alert20240209.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2023/0214-ms.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2023/20240111.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2023/alert20240209.html" />
+             <rdf:li rdf:resource="https://www.ipa.go.jp/security/security-alert/2023/0214-adobereader.html" />
+         </rdf:Seq>
+     </items>
+ </channel>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/alert20240918.html">
+  <title>更新：VMware 製品の脆弱性対策について(CVE-2024-38812 等)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/alert20240918.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-10-22T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/1016-jre.html">
+  <title>Oracle Java の脆弱性対策について(2024年10月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/1016-jre.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-10-16T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/win10_eos.html">
+  <title>Windows 10 のサポート終了に伴う注意喚起</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/win10_eos.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-10-15T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/1009-ms.html">
+  <title>Microsoft 製品の脆弱性対策について(2024年10月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/1009-ms.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-10-09T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/alert20240918.html">
+  <title>VMware 製品の脆弱性対策について(CVE-2024-38812 等)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/alert20240918.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-09-18T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/alert20240911.html">
+  <title>Adobe ColdFusion の脆弱性対策について(CVE-2024-41874)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/alert20240911.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-09-11T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0911-ms.html">
+  <title>Microsoft 製品の脆弱性対策について(2024年9月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0911-ms.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-09-11T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0911-adobereader.html">
+  <title>Adobe Acrobat および Reader の脆弱性対策について(2024年9月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0911-adobereader.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-09-11T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0814-ms.html">
+  <title>Microsoft 製品の脆弱性対策について(2024年8月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0814-ms.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-08-14T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0814-adobereader.html">
+  <title>Adobe Acrobat および Reader の脆弱性対策について(2024年8月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0814-adobereader.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-08-14T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/alert20240801.html">
+  <title>センチュリー・システムズ製FutureNet NXRシリーズ、VXRシリーズおよびWXRシリーズにおける複数の脆弱性（CVE-2024-31070等）について</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/alert20240801.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-08-01T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0717-jre.html">
+  <title>Oracle Java の脆弱性対策について(2024年7月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0717-jre.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-07-17T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0710-ms.html">
+  <title>Microsoft 製品の脆弱性対策について(2024年7月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0710-ms.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-07-10T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/alert_20240705.html">
+  <title>PHPの脆弱性（CVE-2024-4577）を狙う攻撃について</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/alert_20240705.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-07-05T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/alert20240619.html">
+  <title>VMware 製品の脆弱性対策について(CVE-2024-37079 等)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/alert20240619.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-06-19T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0612-ms.html">
+  <title>Microsoft 製品の脆弱性対策について(2024年6月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0612-ms.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-06-12T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0515-adobereader.html">
+  <title>Adobe Acrobat および Reader の脆弱性対策について(2024年5月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0515-adobereader.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-05-15T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0515-ms.html">
+  <title>Microsoft 製品の脆弱性対策について(2024年5月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0515-ms.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-05-15T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/alert20240415.html">
+  <title>更新：Palo Alto Networks 製 PAN-OS の脆弱性対策について(CVE-2024-3400)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/alert20240415.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-04-19T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/alert_orb.html">
+  <title>アタックサーフェスの Operational Relay Box 化を伴うネットワーク貫通型攻撃について ～Adobe ColdFusion の脆弱性（CVE-2023-29300）を狙う攻撃～</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/alert_orb.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-04-18T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/alert20240415.html">
+  <title>更新：Palo Alto Networks 製 PAN-OS の脆弱性対策について(CVE-2024-3400)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/alert20240415.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-04-17T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0417-jre.html">
+  <title>Oracle Java の脆弱性対策について(CVE-2023-41993等)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0417-jre.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-04-17T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/alert20240415.html">
+  <title>Palo Alto Networks 製 PAN-OS の脆弱性対策について(CVE-2024-3400)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/alert20240415.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-04-15T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2024/0410-ms.html">
+  <title>Microsoft 製品の脆弱性対策について(2024年4月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2024/0410-ms.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-04-10T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2023/0313-ms.html">
+  <title>Microsoft 製品の脆弱性対策について(2024年3月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2023/0313-ms.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-03-13T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2023/alert20240209.html">
+  <title>更新：Fortinet 製 FortiOS SSL VPN の脆弱性対策について(CVE-2024-21762)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2023/alert20240209.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-02-26T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2023/0214-ms.html">
+  <title>更新：Microsoft 製品の脆弱性対策について(2024年2月)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2023/0214-ms.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-02-19T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2023/20240111.html">
+  <title>更新：Ivanti Connect Secure（旧Pulse Connect Secure）および Ivanti Policy Secure Gateways の脆弱性対策について(CVE-2023-46805 等)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2023/20240111.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-02-16T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2023/alert20240209.html">
+  <title>更新：Fortinet 製 FortiOS SSL VPN の脆弱性対策について(CVE-2024-21762)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2023/alert20240209.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-02-14T00:00:00+09:00</dc:date>
+ </item>
+ <item rdf:about="https://www.ipa.go.jp/security/security-alert/2023/0214-adobereader.html">
+  <title>Adobe Acrobat および Reader の脆弱性対策について(APSB24-07)(CVE-2024-20731等)</title>
+  <link>https://www.ipa.go.jp/security/security-alert/2023/0214-adobereader.html</link>
+  <dc:creator>情報処理推進機構（IPA）</dc:creator>
+  <dc:date>2024-02-14T00:00:00+09:00</dc:date>
+ </item>
+
+</rdf:RDF>
