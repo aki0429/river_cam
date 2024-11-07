@@ -57,7 +57,6 @@
                 display: block;
             }
             #photoModal_back {
-                z-index: 10000001;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -81,7 +80,7 @@
             #photoModal_photo_img {
                 height: calc(80vh - 2rem);
             }
-            #close_photoModal {
+            #close_photoModal, .modal_close {
                 z-index: 10000003;
                 position: absolute;
                 font-size: 1.3rem;
@@ -89,7 +88,15 @@
                 top: 0px;
                 right: 0px;
                 cursor: pointer;
-                padding: 5px;}
+                padding: 5px;
+            }
+            #slideshow_select_label {
+                z-index: 10000002;
+                position: absolute;
+                bottom: 3px;
+                right: 5px;
+                color: white;
+            }
 
             .button, .mode_btn, .setsumei {
                 background: #000000aa;
@@ -101,13 +108,10 @@
                 font-weight: 500;
                 font-size: 0.9rem;
                 cursor: pointer;
-                position: absolute;
-                bottom: 5px;
-                left: 10px;
                 z-index: 10000;
                 user-select: none;
             }
-            #div_prefselect {
+            .modal {
                 z-index: 100000;
                 width: 100%;
                 height: 100%;
@@ -116,10 +120,10 @@
                 left: 0;
                 display: none;
             }
-            #div_prefselect.display {
+            .modal.display {
                 display: block;
             }
-            #back_div_prefselect {
+            #back_div_prefselect, .modal_back {
                 width: 100%;
                 height: 100%;
                 background-color: #00000099;
@@ -129,19 +133,24 @@
                 backdrop-filter: blur(5px);
                 z-index: 100001;
             }
-            #front_div_prefselect {
+            #front_div_prefselect, .modal_front {
                 z-index: 100002;
                 color: white;
+                width: 80%;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%);
                 text-align: center;
             }
-            #front_div_prefselect input {
-                margin-left: 1rem;
+            /* #front_div_prefselect label, .modal_front label {
+                display: inline-block;
+                width: 10em;
+            } */
+            #front_div_prefselect input[type=checkbox], .modal_front input[type=checkbox] {
+                margin-left: 2em;
             }
-            #front_div_prefselect div {
+            #front_div_prefselect div, .modal_front div {
                 margin: 1rem 0;
             }
             #cancel_front_div_prefselect {
@@ -150,6 +159,7 @@
                 border: white 2px solid;
                 border-radius: 5px;
                 padding: 5px;
+                cursor: pointer;
             }
             #ok_front_div_prefselect {
                 display: inline-block;
@@ -158,19 +168,35 @@
                 border-radius: 5px;
                 padding: 5px;
                 margin-left: 1rem;
+                cursor: pointer;
             }
         </style>
     </head>
     <body>
         <div id="map" style="background: white"></div>
 
-        <button id="prefselect" class="button">都道府県選択</button>
-        <div id="div_prefselect">
-            <div id="back_div_prefselect"></div>
+
+        <div class="btns">
+            <button id="prefselect" class="button">都道府県選択</button>
+            <button id="slideshow_start_btn" class="button">ｽﾗｲﾄﾞｼｮｰ開始</button>
+            <button id="slideshow_edit_btn" class="button">ｽﾗｲﾄﾞｼｮｰ編集</button>
+        </div>
+
+        <div id="div_prefselect" class="modal">
+            <div id="back_div_prefselect" class="modal_back"></div>
             <div id="front_div_prefselect">
                 <div><span style="font-size: 1.4rem;">都道府県選択</span></div>
 
                 <div><span id="cancel_front_div_prefselect">キャンセル</span><span id="ok_front_div_prefselect">適用</span></div>
+            </div>
+        </div>
+
+        <div id="div_slideshow_edit" class="modal">
+            <span id="close_div_slideshow_edit" class="modal_close">×</span>
+            <div class="modal_back"></div>
+            <div id="front_div_slideshow_edit" class="modal_front">
+                <div><span style="font-size: 1.4rem;">スライドショー編集</span></div>
+                
             </div>
         </div>
         
@@ -181,12 +207,13 @@
                 <div id="photoModal_photo_name">カメラ観測点名</div>
                 <img src="https://placehold.jp/640x480.png" id="photoModal_photo_img">
             </div>
+            <label id="slideshow_select_label"><input type="checkbox" id="slideshow_select_checkbox" onchange="slideshow_checkbox(this)" data-camid="00000000" data-camname="カメラ観測点名">ｽﾗｲﾄﾞｼｮｰ保存</label>
         </div>
     </body>
 
     <link rel="stylesheet" href="amedas.css">
     <script>
-        var map = L.map('map', {
+var map = L.map('map', {
     zoomSnap: 0,
     center: [37.575, 137.984],
     zoom: 5.6,
@@ -234,6 +261,8 @@ L.control.layers(baseMap).addTo(map);
 
 var markers = L.layerGroup();
 
+
+
 //旧json取得 都道府県選択なしのため負荷甚大による無効状態
 //var cityList = [
 //大阪27
@@ -279,6 +308,13 @@ var prefCityList = {
 
 }
 var prefCheckList = [];
+var slideshowList;
+if (localStorage.getItem('slideshowList') != undefined) {
+    slideshowList = JSON.parse(localStorage.getItem('slideshowList'));
+} else {
+    slideshowList = {};
+}
+var pointLatLngList = {};
 
 var prefselect = document.getElementById('prefselect');
 var front_div_prefselect = document.getElementById('front_div_prefselect');
@@ -312,6 +348,8 @@ function drawMap(prefCode) {
         map.removeLayer(markers);
         markers = L.layerGroup();
 
+        pointLatLngList = {};
+
         prefCode.forEach(PC => {
             prefCityList[PC]["cityList"].forEach(uRl => {
                 $.getJSON("normal.php?url="+uRl, function(data) {
@@ -319,12 +357,16 @@ function drawMap(prefCode) {
                         var latlon = new L.LatLng(element["geometry"]["coordinates"][1], element["geometry"]["coordinates"][0]);
                         var name = element["properties"]["name"];
                         var id = element["properties"]["id"];
+                        pointLatLngList[id] = {};
+                        pointLatLngList[id]["name"] = name;
+                        pointLatLngList[id]["lat"] = element["geometry"]["coordinates"][1];
+                        pointLatLngList[id]["lng"] = element["geometry"]["coordinates"][0];
                         $.getJSON("camera.php?url="+id, function(data) {
                             var imageSrc = data["obsInfo"]["currProvUrl"];
                             var kariMarker = L.marker(latlon, {}).bindTooltip(name);
                             kariMarker.imageURL = imageSrc;
                             kariMarker.camName = name;
-                            kariMarker.camId = id;
+                            kariMarker.camID = id;
                             kariMarker.on('click', function(e) { viewPhoto(e)});
                             markers.addLayer(kariMarker);
                             //image.onload = function(){
@@ -353,8 +395,12 @@ function drawMap(prefCode) {
 function viewPhoto(e) {
     var imageSrc = e.target.imageURL;
     var name = e.target.camName;
+    var camID = e.target.camID;
     document.getElementById('photoModal_photo_name').innerText = name;
     document.getElementById('photoModal_photo_img').src = imageSrc;
+    var addChecked;
+    if (slideshowList[camID]) {addChecked = "checked";} else {addChecked = "";}
+    document.getElementById('slideshow_select_label').innerHTML = '<input type="checkbox" id="slideshow_select_checkbox" onchange="slideshow_checkbox(this)" data-camid="'+camID+'" data-camname="'+name+'" '+addChecked+'>ｽﾗｲﾄﾞｼｮｰ保存';
     document.getElementById('photoModal').classList.add('display');
 }
 
@@ -362,5 +408,41 @@ document.getElementById('close_photoModal').addEventListener("click",()=>{
     document.getElementById('photoModal').classList.remove('display');
 });
 
+function slideshow_checkbox(e) {
+    var camID = e.dataset.camid;
+    if (e.checked) {
+        slideshowList[camID] = {};
+        slideshowList[camID]["name"] = pointLatLngList[camID]["name"];
+        slideshowList[camID]["lat"] = pointLatLngList[camID]["lat"];
+        slideshowList[camID]["lng"] = pointLatLngList[camID]["lng"];
+    } else {
+        if (slideshowList[camID]) {
+            delete slideshowList[camID];
+        }
+    }
+    localStorage.setItem('slideshowList', JSON.stringify(slideshowList));
+    if (document.getElementById('div_slideshow_edit').classList.contains('display')) {
+        document.getElementById('slideshow_edit_btn').click();
+    }
+}
+var front_div_slideshow_edit = document.getElementById('front_div_slideshow_edit');
+document.getElementById('slideshow_edit_btn').addEventListener("click",()=>{
+    front_div_slideshow_edit.innerHTML = '<div><span style="font-size: 1.4rem;">スライドショーリスト編集</span></div>';
+    front_div_slideshow_edit.innerHTML += '<div>「チェックボックス」クリックで観測点をリストから削除<br>「チェックボックス横の観測点名」クリックでその観測点へ地図遷移</div>';
+    Object.keys(slideshowList).forEach(element => {
+        var text = '['+element+'] '+slideshowList[element]["name"];
+        var htmlOB = '<input type="checkbox" name="slideshowselectcheckbox" id="slideshow_select_checkbox" onchange="slideshow_checkbox(this)" data-camid="'+element+'" checked><span onclick="slideshow_edit(\''+element+'\')">'+text+'</span>';
+        front_div_slideshow_edit.innerHTML += htmlOB;
+    });
+    document.getElementById('div_slideshow_edit').classList.add('display');
+});
+document.getElementById('close_div_slideshow_edit').addEventListener("click",()=>{
+    document.getElementById('div_slideshow_edit').classList.remove('display');
+});
+function slideshow_edit(camID) {
+    document.getElementById('div_slideshow_edit').classList.remove('display');
+    var fly_point_lnglat = new L.LatLng(slideshowList[camID]["lat"], slideshowList[camID]["lng"]);
+    map.flyTo(fly_point_lnglat, 14, { duration: 0.5 });
+}
     </script>
 </html>
